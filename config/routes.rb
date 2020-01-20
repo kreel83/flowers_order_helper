@@ -11,4 +11,5 @@ Rails.application.routes.draw do
       get 'show_by_date'
     end
   end
+  resources :fleurs
 end

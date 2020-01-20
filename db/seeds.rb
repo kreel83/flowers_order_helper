@@ -26,6 +26,7 @@ t = 0
     flower.photo.attach(io: file, filename: filename, content_type: 'image/jpg')
     flower.save
     t += 1
+    puts "#{t} elements "
   end
 i += 1
 end

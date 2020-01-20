@@ -1,0 +1,36 @@
+<h1>coucou</h1>
+
+<style type="text/css">
+	.card {
+		cursor: pointer;
+	}
+</style>
+
+
+
+<div class="container">
+	<div class="form-group">
+			<input type="text" id="fleur" class="form-control">
+
+	</div>
+
+	<form action="/neworder/createmarc" method="post">
+		<%= csrf_meta_tags %>
+		<input type="hidden" name="fleurs" id="fleurs">
+		<button type="submit" class="btn btn-primary" >Choisir</button>
+	</form>
+
+	<hr>
+	<div class="row flex-wrap">
+		<% @flowers.each do |flower| %>
+			<div class="card" data-id="<%= flower.id %>" data-name="<%= flower.name.downcase %>" style="width:200px;margin: 5px">
+				<div class="card-header">
+					<%= flower.name.downcase %>
+				</div>
+				<div class="card-body">
+          <%= cl_image_tag flower.photo.key, class: "card-img-top" %>
+				</div>
+			</div>	
+		<% end %>
+	</div>
+</div>

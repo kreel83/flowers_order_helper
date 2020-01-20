@@ -22,6 +22,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def new1
+    @order = Order.new
+    @flowers = Flower.all
+  end
+
+  def createmarc
+    raise
+  end
+
   def new
     @order = Order.new
   end
